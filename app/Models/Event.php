@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\User;
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,8 +20,8 @@ class Event extends Model
     protected $fillable = [
         'user_id', 'name', 'category', 'description',
         'start_date', 'end_date', 'event_time',
-        'location_name', 'address', 'geom',
-        'poster_path',
+        'location_name', 'address', 'latitude',
+        'longitude', 'poster_path',
     ];
 
     protected function casts(): array
@@ -28,13 +29,26 @@ class Event extends Model
         return [
             'start_date' => 'date',
             'end_date' => 'date',
-            'geom' => 'geometry',
+            'latitude' => 'float',
+            'longitude' => 'float',
         ];
     }
-    
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getPosterUrlAttribute(): string
+{
+    // poster default jika event belum memiliki poster
+    if (! $this->poster_path) {
+        return asset('images/posters/default.svg');
+    }
+
+    
+    return str_starts_with($this->poster_path, 'images/')
+        ? asset($this->poster_path)
+        : asset('storage/'.$this->poster_path);
+}
 }

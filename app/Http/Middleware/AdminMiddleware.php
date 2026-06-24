@@ -8,13 +8,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  Closure(Request): (Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
+        abort_unless(
+            $request->user()?->isAdmin(),
+            403,
+            'Aksi ini hanya dapat dilakukan oleh admin.'
+        );
+
         return $next($request);
     }
 }
