@@ -15,6 +15,9 @@
                         <span class="kicker">PETA INTERAKTIF DIY</span>
                         <h1>Jelajahi event</h1>
                     </div>
+                    @auth
+                        <a class="btn btn-primary btn-sm" href="{{ route('events.create') }}">+ Titik</a>
+                    @endauth
                 </div>
 
                 @if ($errors->any())
@@ -78,15 +81,7 @@
                             </span>
                             <span class="map-event-arrow" aria-hidden="true">›</span>
                         </button>
-                        @if(auth()->user()?->isAdmin())
-                            <div class="map-event-admin-actions">
-                                <a href="{{ route('events.edit', $event) }}">Edit</a>
-                                <form method="POST" action="{{ route('events.destroy', $event) }}" data-confirm="Hapus event {{ $event->name }}?">
-                                    @csrf @method('DELETE')
-                                    <button type="submit">Hapus</button>
-                                </form>
-                            </div>
-                        @endif
+
                     </div>
                 @empty
                     <div class="map-list-empty">
@@ -99,7 +94,6 @@
 
         <div class="map-canvas-wrap">
             <div id="event-map" class="event-map map-canvas" aria-label="Peta lokasi event Daerah Istimewa Yogyakarta"></div>
-            <div class="osm-badge"><span>Basemap</span><strong>OpenStreetMap</strong></div>
         </div>
     </section>
 @endsection

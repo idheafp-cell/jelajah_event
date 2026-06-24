@@ -129,7 +129,7 @@ class EventController extends Controller
         $event->update($data);
 
         // Kembali ke tabel event setelah update selesai.
-        return redirect()->route('events.index')
+        return redirect()->route('events.map')
             ->with('success', 'Event berhasil diperbarui.');
     }
 
@@ -143,7 +143,7 @@ class EventController extends Controller
         // Hapus data event dari database.
         $event->delete();
 
-        return redirect()->route('events.index')
+        return redirect()->route('events.map')
             ->with('success', 'Event berhasil dihapus.');
     }
 
