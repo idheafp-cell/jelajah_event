@@ -6,9 +6,8 @@
     <section class="page-hero list-page-hero">
         <div class="container page-heading-row">
             <div>
-                <span class="eyebrow"><span>☷</span> Agenda Yogyakarta</span>
                 <h1>Daftar event<br><em>pilihan.</em></h1>
-                <p>Lihat jadwal, kategori, dan lokasi event dalam satu daftar.</p>
+                <p>Lihat jadwal, kategori, dan lokasi event.</p>
             </div>
             @auth
                 <a class="btn btn-primary" href="{{ route('events.create') }}">＋ Tambah event</a>

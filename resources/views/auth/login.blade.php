@@ -30,12 +30,6 @@
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Masuk <span>→</span></button>
                     </form>
 
-                    <div class="demo-accounts">
-                        <strong>Akun demo</strong>
-                        <button type="button" data-fill-login data-email="user@jelajahevent.test"><span>Kontributor</span><small>user@jelajahevent.test</small></button>
-                        <button type="button" data-fill-login data-email="admin@jelajahevent.test"><span>Administrator</span><small>admin@jelajahevent.test</small></button>
-                        <p>Kata sandi kedua akun: <code>password</code></p>
-                    </div>
                 </div>
             </div>
         </div>

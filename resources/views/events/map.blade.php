@@ -15,11 +15,6 @@
                         <span class="kicker">PETA INTERAKTIF DIY</span>
                         <h1>Jelajahi event</h1>
                     </div>
-                    @auth
-                        <a class="btn btn-primary btn-sm" href="{{ route('events.create') }}">+ Titik</a>
-                    @else
-                        <a class="btn btn-dark btn-sm" href="{{ route('login') }}">Masuk</a>
-                    @endauth
                 </div>
 
                 @if ($errors->any())

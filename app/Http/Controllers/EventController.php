@@ -182,7 +182,7 @@ class EventController extends Controller
     }
 
     // Menyimpan semua aturan validasi form event pada satu tempat.
-    
+
     private function validateEvent(Request $request): array
     {
         return $request->validate([

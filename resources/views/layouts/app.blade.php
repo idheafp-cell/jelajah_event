@@ -32,10 +32,6 @@
 
                 <div class="nav-auth">
                     @auth
-                        <span class="user-chip">
-                            <span class="user-avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
-                            <span><strong>{{ auth()->user()->name }}</strong><small>{{ auth()->user()->isAdmin() ? 'Administrator' : 'Kontributor' }}</small></span>
-                        </span>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button class="btn btn-ghost btn-sm" type="submit">Keluar</button>

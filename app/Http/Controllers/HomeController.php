@@ -23,8 +23,7 @@ class HomeController extends Controller
         $upcomingEvents = Event::query()
             ->whereDate('end_date', '>=', today())
             ->orderBy('start_date')
-            ->limit(3)
-            ->get();
+            ->paginate(10);
 
         // compact() mengirim kedua variabel tersebut ke home.blade.php.
         return view('home', compact('counts', 'upcomingEvents'));

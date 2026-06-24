@@ -21,7 +21,8 @@ return new class extends Migration
             $table->enum('category', ['kuliner', 'musik', 'olahraga', 'budaya']);
             $table->text('description');
             // Kolom ini kemudian diubah menjadi start_date oleh migration berikutnya.
-            $table->date('event_date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->time('event_time')->nullable();
             $table->string('location_name');
             $table->string('address');
@@ -32,7 +33,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Index mempercepat pencarian berdasarkan tanggal dan kategori.
-            $table->index(['event_date', 'category']);
+            $table->index(['start_date', 'category']);
         });
     }
 
