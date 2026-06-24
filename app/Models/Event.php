@@ -31,6 +31,7 @@ class Event extends Model
             'geom' => 'geometry',
         ];
     }
+    
 
     public function user(): BelongsTo
     {
