@@ -27,8 +27,8 @@ return new class extends Migration
             $table->string('location_name');
             $table->string('address');
             // Koordinat digunakan untuk meletakkan marker pada peta Leaflet.
-            $table->decimal('latitude', 10, 7);
-            $table->decimal('longitude', 10, 7);
+            $table->decimal('latitude', 11, 8);
+            $table->decimal('longitude', 11, 8);
             $table->string('poster_path')->nullable();
             $table->timestamps();
 

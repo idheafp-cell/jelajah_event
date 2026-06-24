@@ -40,7 +40,7 @@
                 <div class="table-summary"><strong>{{ $events->total() }} event</strong><span>Diurutkan berdasarkan tanggal terdekat</span></div>
                 <div class="table-scroll">
                     <table class="event-table">
-                        <thead><tr><th>Event</th><th>Kategori</th><th>Periode</th><th>Lokasi</th>@if(auth()->user()?->isAdmin())<th>Aksi</th>@endif</tr></thead>
+                        <thead><tr><th>Event</th><th>Kategori</th><th>Waktu</th><th>Lokasi</th>@if(auth()->user()?->isAdmin())<th>Aksi</th>@endif</tr></thead>
                         <tbody>
                             @forelse ($events as $event)
                                 <tr>

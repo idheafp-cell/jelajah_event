@@ -8,7 +8,7 @@
 
 @section('content')
     <section class="map-screen">
-        <aside class="map-sidebar" aria-label="Daftar dan filter event">
+        <aside class="map-sidebar" aria-label="Daftar dan filter event" tabindex="0">
             <div class="map-sidebar-header">
                 <div class="map-panel-heading">
                     <div>

@@ -194,8 +194,8 @@ class EventController extends Controller
             'event_time' => ['nullable', 'date_format:H:i'],
             'location_name' => ['required', 'string', 'max:150'],
             'address' => ['required', 'string', 'max:255'],
-            'latitude' => ['required', 'numeric', 'between:-8.2,-7.4'],
-            'longitude' => ['required', 'numeric', 'between:110.0,110.9'],
+            'latitude' => ['required', 'numeric'],
+            'longitude' => ['required', 'numeric'],
             'poster' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
         ], [
             'end_date.after_or_equal' => 'Tanggal selesai harus sama dengan atau setelah tanggal mulai.',

@@ -52,8 +52,8 @@
                     <div class="form-grid">
                         <label class="field"><span>Nama lokasi <b>*</b></span><input type="text" name="location_name" value="{{ old('location_name', $event->location_name) }}" placeholder="Contoh: Stadion Kridosono" required></label>
                         <label class="field"><span>Alamat lengkap <b>*</b></span><input type="text" name="address" value="{{ old('address', $event->address) }}" placeholder="Jalan, kelurahan, kabupaten/kota" required></label>
-                        <label class="field"><span>Latitude <b>*</b></span><input id="latitude" type="number" step="0.0000001" name="latitude" value="{{ old('latitude', $event->latitude) }}" placeholder="-7.7956000" required></label>
-                        <label class="field"><span>Longitude <b>*</b></span><input id="longitude" type="number" step="0.0000001" name="longitude" value="{{ old('longitude', $event->longitude) }}" placeholder="110.3695000" required></label>
+                        <label class="field"><span>Latitude <b>*</b></span><input id="latitude" type="number" step="any" name="latitude" value="{{ old('latitude', $event->latitude) }}" placeholder="-7.7956000" required></label>
+                        <label class="field"><span>Longitude <b>*</b></span><input id="longitude" type="number" step="any" name="longitude" value="{{ old('longitude', $event->longitude) }}" placeholder="110.3695000" required></label>
                         <div class="field full"><span>Klik lokasi pada peta</span><div id="picker-map" class="picker-map"></div><small class="field-hint">Anda juga dapat menggeser penanda untuk memperbaiki posisi.</small></div>
                     </div>
                 </section>
