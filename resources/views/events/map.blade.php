@@ -163,7 +163,7 @@
                 @if($canManageEvents)
                     managementActions = `
                         <div class="map-popup-actions">
-                            <a class="popup-edit-button" href="${escapeHtml(event.edit_url)}">Edit event</a>
+                            <a class="popup-edit-button" href="${escapeHtml(event.edit_url)}">Edit</a>
                             <form class="popup-delete-form" method="POST" action="${escapeHtml(event.delete_url)}" data-event-name="${escapeHtml(event.name)}">
                                 <input type="hidden" name="_token" value="${escapeHtml(csrfToken)}">
                                 <input type="hidden" name="_method" value="DELETE">
